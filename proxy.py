@@ -51,7 +51,7 @@ def get_response(url, params=None, headers=HEADERS, timeout=20):
         try:
             response = requests.get(url, params, headers=headers, proxies={"http": "http://{}".format(proxy)},
                                     timeout=timeout)
-            print("请求：" + response.url)
+            # print("请求：" + response.url)
             return response
         except Exception as e:
             retry_count -= 1

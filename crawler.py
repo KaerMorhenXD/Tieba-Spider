@@ -48,7 +48,7 @@ class Crawler(Singleton):
             url = self.url + word
             url_list.append(url)
 
-        print(url_list)
+        # print(url_list)
         return url_list
 
     def post_url(self, url):
@@ -65,8 +65,8 @@ class Crawler(Singleton):
         for u in url_list:
             post_url_list.append(self.root_url + u)
 
-        print("帖子url:", end="")
-        print(post_url_list)
+        # print("帖子url:", end="")
+        # print(post_url_list)
         return post_url_list
 
     def post_page_url(self, url):
@@ -79,7 +79,7 @@ class Crawler(Singleton):
 
         # 匹配得到页数
         post_total_pages = self.regex_match.post_total_pages(html)
-        print("该帖子共" + str(post_total_pages) + "页")
+        # print("该帖子共" + str(post_total_pages) + "页")
 
         # 利用页数构造每页的 url
         post_page_url_list = []
@@ -97,7 +97,7 @@ class Crawler(Singleton):
 
         # 获取该页下所有图片 url 列表
         img_url_list = self.regex_match.img_url(html)
-        print("图片url:", end="")
-        print(img_url_list)
+        # print("图片url:", end="")
+        # print(img_url_list)
 
         return img_url_list
